@@ -121,14 +121,14 @@ $showTools = !tpl_getConf('hideTools') || (tpl_getConf('hideTools') && $_SERVER[
 					</div><!-- /header-group-inner -->
 				</div><!-- /header-group -->
 			</div>
-
+<?php /*
 		<div id="dokuwiki__site">
 			<div class="dokuwiki site mode_<?php echo $ACT ?>">
 				<div id="header-top-wrapper" class="header-top-wrapper full-width">
 					<div id="header-top" class="header-top row grid16-16">
 						<div id="header-top-inner" class="header-top-inner inner clearfix">
 							
-			<?php html_msgarea() /* occasional error and info messages on top of the page */ ?>
+			<?php html_msgarea() // occasional error and info messages on top of the page ?>
         <?php _tpl_include('header.html') ?>
 
         <!-- ********** HEADER ********** -->
@@ -138,7 +138,7 @@ $showTools = !tpl_getConf('hideTools') || (tpl_getConf('hideTools') && $_SERVER[
                 <h1><?php tpl_link(wl(),$conf['title'],'id="dokuwiki__top" accesskey="h" title="[H]"') ?></h1>
                 <?php /* how to insert logo instead (if no CSS image replacement technique is used):
                         upload your logo into the data/media folder (root of the media manager) and replace 'logo.png' accordingly:
-                        tpl_link(wl(),'<img src="'.ml('logo.png').'" alt="'.$conf['title'].'" />','id="dokuwiki__top" accesskey="h" title="[H]"') */ ?>
+                        tpl_link(wl(),'<img src="'.ml('logo.png').'" alt="'.$conf['title'].'" />','id="dokuwiki__top" accesskey="h" title="[H]"') * ?>
                 <?php if (tpl_getConf('tagline')): ?>
                     <p class="claim"><?php echo tpl_getConf('tagline') ?></p>
                 <?php endif ?>
@@ -156,16 +156,16 @@ $showTools = !tpl_getConf('hideTools') || (tpl_getConf('hideTools') && $_SERVER[
                         <h3 class="a11y"><?php echo tpl_getLang('user_tools') ?></h3>
                         <ul>
                             <?php /* the optional second parameter of tpl_action() switches between a link and a button,
-                                     e.g. a button inside a <li> would be: tpl_action('edit',0,'li') */
+                                     e.g. a button inside a <li> would be: tpl_action('edit',0,'li') *
                                 if ($_SERVER['REMOTE_USER']) {
                                     echo '<li class="user">';
-                                    tpl_userinfo(); /* 'Logged in as ...' */
+                                    tpl_userinfo(); /* 'Logged in as ...' /
                                     echo '</li>';
                                 }
                                 tpl_action('admin', 1, 'li');
                                 _tpl_action('userpage', 1, 'li');
                                 tpl_action('profile', 1, 'li');
-                                _tpl_action('register', 1, 'li'); /* DW versions > 2011-02-20 can use the core function tpl_action('register', 1, 'li') */
+                                _tpl_action('register', 1, 'li'); /* DW versions > 2011-02-20 can use the core function tpl_action('register', 1, 'li') /
                                 tpl_action('login', 1, 'li');
                             ?>
                         </ul>
@@ -204,18 +204,18 @@ $showTools = !tpl_getConf('hideTools') || (tpl_getConf('hideTools') && $_SERVER[
 
             <!-- ********** ASIDE ********** -->
             <div id="dokuwiki__aside"><div class="pad include">
-                <?php tpl_include_page(tpl_getConf('sidebarID')) /* includes the given wiki page */ ?>
+                <?php tpl_include_page(tpl_getConf('sidebarID')) // includes the given wiki page ?>
                 <div class="clearer"></div>
             </div></div><!-- /aside -->
 
             <!-- ********** CONTENT ********** -->
             <div id="dokuwiki__content"><div class="pad">
-                <?php tpl_flush() /* flush the output buffer */ ?>
+                <?php tpl_flush() // flush the output buffer ?>
                 <?php _tpl_include('pageheader.html') ?>
 
                 <div class="page">
                     <!-- wikipage start -->
-                    <?php tpl_content() /* the main content */ ?>
+                    <?php tpl_content() // the main content ?>
                     <!-- wikipage stop -->
                     <div class="clearer"></div>
                 </div>
@@ -248,14 +248,14 @@ $showTools = !tpl_getConf('hideTools') || (tpl_getConf('hideTools') && $_SERVER[
 
         <!-- ********** FOOTER ********** -->
         <div id="dokuwiki__footer"><div class="pad">
-            <div class="doc"><?php tpl_pageinfo() /* 'Last modified' etc */ ?></div>
-            <?php tpl_license('button') /* content license, parameters: img=*badge|button|0, imgonly=*0|1, return=*0|1 */ ?>
+            <div class="doc"><?php tpl_pageinfo() // 'Last modified' etc ?></div>
+            <?php tpl_license('button') // content license, parameters: img=*badge|button|0, imgonly=*0|1, return=*0|1 ?>
         </div></div><!-- /footer -->
 
         <?php _tpl_include('footer.html') ?>
     </div></div><!-- /site -->
 
-    <div class="no"><?php tpl_indexerWebBug() /* provide DokuWiki housekeeping, required in all templates */ ?></div>
-    <!--[if ( IE 6 | IE 7 | IE 8 ) ]></div><![endif]-->
+    <div class="no"><?php tpl_indexerWebBug() // provide DokuWiki housekeeping, required in all templates ?></div>
+*/ ?>
 </body>
 </html>
