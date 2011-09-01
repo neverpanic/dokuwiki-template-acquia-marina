@@ -91,6 +91,7 @@ $showTools = !tpl_getConf('hideTools') || (tpl_getConf('hideTools') && $_SERVER[
 									<form id="search-theme-form" method="post" accept-charset="UTF-8" action="/">
 										<div>
 											<div class="container-inline" id="search">
+                    <?php tpl_searchform() ?>
 												<input type="text" title="Enter the terms you wish to search for" value="" size="15" id="edit-search-theme-form-header" name="search_theme_form" maxlength="128" class="search-input form-text">
 												<input type="submit" value="Suche" name="op" class="search-submit">
 												<input type="hidden" value="form-0adc73bbe9f0296e3f0bdd760ecd007e" id="form-0adc73bbe9f0296e3f0bdd760ecd007e" name="form_build_id">
@@ -132,32 +133,66 @@ $showTools = !tpl_getConf('hideTools') || (tpl_getConf('hideTools') && $_SERVER[
 					</div><!-- /preface-top-inner -->
 				</div><!-- /preface-top -->
 			</div>
-<?php /*
 
-        <!-- ********** HEADER ********** -->
-        <div id="dokuwiki__header"><div class="pad">
-            <div class="tools">
-                <!-- USER TOOLS -->
-                <?php if ($conf['useacl'] && $showTools): ?>
-                    <div id="dokuwiki__usertools">
-                        <h3 class="a11y"><?php echo tpl_getLang('user_tools') ?></h3>
-                        <ul>
-                            <?php /* the optional second parameter of tpl_action() switches between a link and a button,
-                                     e.g. a button inside a <li> would be: tpl_action('edit',0,'li') *
-                                if ($_SERVER['REMOTE_USER']) {
-                                    echo '<li class="user">';
-                                    tpl_userinfo(); /* 'Logged in as ...' /
-                                    echo '</li>';
-                                }
-                                tpl_action('admin', 1, 'li');
-                                _tpl_action('userpage', 1, 'li');
-                                tpl_action('profile', 1, 'li');
-                                _tpl_action('register', 1, 'li'); /* DW versions > 2011-02-20 can use the core function tpl_action('register', 1, 'li') /
-                                tpl_action('login', 1, 'li');
-                            ?>
-                        </ul>
-                    </div>
-                <?php endif ?>
+			<div class="main-wrapper full-width" id="main-wrapper">
+				<div class="main row grid16-16" id="main">
+					<div class="main-inner inner clearfix" id="main-inner">
+						<div class="sidebar-first row nested grid16-4" id="sidebar-first">
+							<div class="sidebar-first-inner inner clearfix" id="sidebar-first-inner">
+								<div class="block block-user odd first last fusion-bold-links marina-rounded-corners marina-title-green grid16-16" id="block-user-1">
+									<div class="inner">
+										<div class="corner-top"><div class="corner-top-right corner"></div><div class="corner-top-left corner"></div></div>
+										<div class="inner-wrapper">
+											<div id="dokuwiki__sitetools" class="inner-inner" style="border: medium none; position: relative;">
+												<div class="block-icon pngfix"></div>
+												<!-- SITE TOOLS -->
+												<h2 class="title block-title a11y"><?php echo tpl_getLang('site_tools'); ?></h2>
+												<div class="content clearfix">
+												<ul class="menu">
+													<?php tpl_action('recent', 1, 'li'); ?>	
+													<?php tpl_action('index',  1, 'li'); ?>
+												</ul>
+											</div>
+										</div><!-- /inner-inner -->
+									</div><!-- /inner-wrapper -->
+									<div class="corner-bottom"><div class="corner-bottom-right corner"></div><div class="corner-bottom-left corner"></div></div>
+								</div><!-- /inner -->
+							</div><!-- /block --></div><!-- /sidebar-first-inner -->
+						</div><!-- /sidebar-first -->
+
+						<!-- main group: width = grid_width - sidebar_first_width -->
+						<div class="main-group row nested grid16-12" id="main-group">
+							<div class="main-group-inner inner clearfix" id="main-group-inner">
+								<div class="main-content row nested" id="main-content">
+									<div class="main-content-inner inner clearfix" id="main-content-inner">
+										<!-- content group: width = grid_width - (sidebar_first_width + sidebar_last_width) -->
+										<div style="width:100%" class="content-group row nested " id="content-group">
+											<div class="content-group-inner inner clearfix" id="content-group-inner">
+												<div class="content-region row nested" id="content-region">
+													<div class="content-region-inner inner clearfix" id="content-region-inner">
+														<a id="dokuwiki__content" name="dokuwiki__content"></a>
+														<div class="content-inner block" id="content-inner">
+															<div class="content-inner-inner inner clearfix" id="content-inner-inner">
+																<div class="content-content" id="content-content">
+																	<!-- wikipage start -->
+                   													<?php tpl_content() // the main content ?>
+                   													<!-- wikipage stop -->
+																</div><!-- /content-content -->
+															</div><!-- /content-inner-inner -->
+														</div><!-- /content-inner -->
+													</div><!-- /content-region-inner -->
+												</div><!-- /content-region -->
+											</div><!-- /content-group-inner -->
+										</div><!-- /content-group -->
+									</div><!-- /main-content-inner -->
+								</div><!-- /main-content -->
+							</div><!-- /main-group-inner -->
+						</div><!-- /main-group -->
+					</div><!-- /main-inner -->
+				</div><!-- /main -->
+			</div>
+
+<?php /*
 
                 <!-- SITE TOOLS -->
                 <div id="dokuwiki__sitetools">
