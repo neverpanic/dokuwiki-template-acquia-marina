@@ -10,6 +10,7 @@ if (!defined('DOKU_INC')) die(); /* must be run from within DokuWiki */
 @require_once(dirname(__FILE__).'/tpl_functions.php'); /* include hook for template functions */
 
 $showTools = !tpl_getConf('hideTools') || (tpl_getConf('hideTools') && $_SERVER['REMOTE_USER']);
+$logged_in = $_SERVER['REMOTE_USER'];
 
 ?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="<?php print $conf['lang']; ?>" xml:lang="<?php print $conf['lang']; ?>">
@@ -21,8 +22,7 @@ $showTools = !tpl_getConf('hideTools') || (tpl_getConf('hideTools') && $_SERVER[
 	<?php _tpl_include('meta.html') ?>
 </head>
 
-<?php // TODO: Add conditional logged-in or not-logged-in ?>
-<body id="dokuwiki__site" class="mode_<?php echo $ACT; ?> front page-node no-sidebars layout-main sidebars-both-last font-size-14 grid-type-fluid grid-width-16 fluid-90">
+<body id="dokuwiki__site" class="mode_<?php echo $ACT; ?> <?php print(($logged_in ? 'not' : '') . 'logged-in'); ?> front page-node no-sidebars layout-main sidebars-both-last font-size-14 grid-type-fluid grid-width-16 fluid-90">
 	<?php html_msgarea() // occasional error and info messages on top of the page ?>
 	<?php /* classes mode_<action> are added to make it possible to e.g. style a page differently if it's in edit mode,
 		see http://www.dokuwiki.org/devel:action_modes for a list of action modes */ ?>
@@ -33,6 +33,7 @@ $showTools = !tpl_getConf('hideTools') || (tpl_getConf('hideTools') && $_SERVER[
 				<a href="#dokuwiki__content"><?php echo tpl_getLang('skip_to_content'); ?></a></li>
 			</div>
 
+			<?php if (!$logged_in): ?>
 			<!-- The login-box -->
 			<div class="header-top-wrapper full-width" id="header-top-wrapper">
 				<div class="header-top row grid16-16" id="header-top">
@@ -81,6 +82,7 @@ $showTools = !tpl_getConf('hideTools') || (tpl_getConf('hideTools') && $_SERVER[
 					</div><!-- /header-top-inner -->
 				</div><!-- /header-top -->
 			</div>
+			<?php endif ?>
 	
 			<div class="header-group-wrapper full-width" id="header-group-wrapper">
 				<div class="header-group row grid16-16" id="header-group">
