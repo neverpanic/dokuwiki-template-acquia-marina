@@ -129,38 +129,6 @@ $showTools = !tpl_getConf('hideTools') || (tpl_getConf('hideTools') && $_SERVER[
 			<div class="preface-top-wrapper full-width" id="preface-top-wrapper">
 				<div class="preface-top row grid16-16" id="preface-top">
 					<div class="preface-top-inner inner clearfix" id="preface-top-inner">
-						<!-- USER TOOLS -->
-					<?php if ($conf['useacl'] && $showTools): ?>
-						<div id="dokuwiki__usertools">
-							<h3 class="a11y"><?php echo tpl_getLang('user_tools') ?></h3>
-							<ul>
-							<?php
-								// the optional second parameter of tpl_action() switches between a link and a button, e.g. a button inside a <li> would be: tpl_action('edit',0,'li')
-								if ($_SERVER['REMOTE_USER']) {
-									echo '<li class="user">';
-										tpl_userinfo(); // 'Logged in as ...'
-									echo '</li>';
-								}
-								tpl_action('admin', 1, 'li');
-								_tpl_action('userpage', 1, 'li');
-								tpl_action('profile', 1, 'li');
-								_tpl_action('register', 1, 'li'); // DW versions > 2011-02-20 can use the core function tpl_action('register', 1, 'li')
-								tpl_action('login', 1, 'li');
-							?>
-							</ul>
-						</div>
-					<?php endif ?>
-						<!-- SITE TOOLS -->
-						<div id="dokuwiki__sitetools">
-							<h3 class="a11y"><?php echo tpl_getLang('site_tools') ?></h3>
-							<?php tpl_searchform() ?>
-							<ul>
-							<?php
-								tpl_action('recent', 1, 'li');
-								tpl_action('index', 1, 'li');
-							?>
-							</ul>
-						</div>
 					</div><!-- /preface-top-inner -->
 				</div><!-- /preface-top -->
 			</div>
