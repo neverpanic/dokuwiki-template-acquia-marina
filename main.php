@@ -155,8 +155,8 @@ $logged_in = $_SERVER['REMOTE_USER'];
 													<?php tpl_action('index',  1, 'li'); ?>
 												</ul>
 											</div><!-- /inner-inner -->
+											<div class="corner-bottom"><div class="corner-bottom-right corner"></div><div class="corner-bottom-left corner"></div></div>
 										</div><!-- /inner-wrapper -->
-										<div class="corner-bottom"><div class="corner-bottom-right corner"></div><div class="corner-bottom-left corner"></div></div>
 									</div><!-- /inner -->
 								</div><!-- /block -->
 								<div class="block block-user odd first last fusion-bold-links marina-rounded-corners marina-title-green grid16-16" id="block-user-1">
@@ -187,8 +187,8 @@ $logged_in = $_SERVER['REMOTE_USER'];
 												<?php endif ?>
 											</div>
 										</div><!-- /inner-inner -->
+										<div class="corner-bottom"><div class="corner-bottom-right corner"></div><div class="corner-bottom-left corner"></div></div>
 									</div><!-- /inner-wrapper -->
-									<div class="corner-bottom"><div class="corner-bottom-right corner"></div><div class="corner-bottom-left corner"></div></div>
 								</div><!-- /inner -->
 							</div><!-- /block -->
 						</div><!-- /sidebar-first-inner -->
