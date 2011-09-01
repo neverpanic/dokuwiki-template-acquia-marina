@@ -154,7 +154,17 @@ $logged_in = $_SERVER['REMOTE_USER'];
 													<?php tpl_action('recent', 1, 'li'); ?>	
 													<?php tpl_action('index',  1, 'li'); ?>
 												</ul>
-
+											</div><!-- /inner-inner -->
+										</div><!-- /inner-wrapper -->
+										<div class="corner-bottom"><div class="corner-bottom-right corner"></div><div class="corner-bottom-left corner"></div></div>
+									</div><!-- /inner -->
+								</div><!-- /block -->
+								<div class="block block-user odd first last fusion-bold-links marina-rounded-corners marina-title-green grid16-16" id="block-user-1">
+									<div class="inner">
+										<div class="corner-top"><div class="corner-top-right corner"></div><div class="corner-top-left corner"></div></div>
+										<div class="inner-wrapper">
+											<div id="dokuwiki__usertools" class="inner-inner" style="border: medium none; position: relative;">
+												<div class="block-icon pngfix"></div>
 												<!-- USER TOOLS -->
 												<?php if ($conf['useacl'] && $showTools): ?>
 												<div id="dokuwiki__usertools">
@@ -180,56 +190,57 @@ $logged_in = $_SERVER['REMOTE_USER'];
 									</div><!-- /inner-wrapper -->
 									<div class="corner-bottom"><div class="corner-bottom-right corner"></div><div class="corner-bottom-left corner"></div></div>
 								</div><!-- /inner -->
-							</div><!-- /block --></div><!-- /sidebar-first-inner -->
-						</div><!-- /sidebar-first -->
+							</div><!-- /block -->
+						</div><!-- /sidebar-first-inner -->
+					</div><!-- /sidebar-first -->
 
-						<!-- main group: width = grid_width - sidebar_first_width -->
-						<div class="main-group row nested grid16-12" id="main-group">
-							<div class="main-group-inner inner clearfix" id="main-group-inner">
-								<div class="main-content row nested" id="main-content">
-									<div class="main-content-inner inner clearfix" id="main-content-inner">
-										<!-- content group: width = grid_width - (sidebar_first_width + sidebar_last_width) -->
-										<div style="width:100%" class="content-group row nested " id="content-group">
-											<div class="content-group-inner inner clearfix" id="content-group-inner">
-												<div class="breadcrumbs block" id="breadcrumbs">
-													<div class="breadcrumbs-inner inner clearfix" id="breadcrumbs-inner">
-														<!-- BREADCRUMBS -->
-														<?php if ($conf['breadcrumbs']): ?>
+					<!-- main group: width = grid_width - sidebar_first_width -->
+					<div class="main-group row nested grid16-12" id="main-group">
+						<div class="main-group-inner inner clearfix" id="main-group-inner">
+							<div class="main-content row nested" id="main-content">
+								<div class="main-content-inner inner clearfix" id="main-content-inner">
+									<!-- content group: width = grid_width - (sidebar_first_width + sidebar_last_width) -->
+									<div style="width:100%" class="content-group row nested " id="content-group">
+										<div class="content-group-inner inner clearfix" id="content-group-inner">
+											<div class="breadcrumbs block" id="breadcrumbs">
+												<div class="breadcrumbs-inner inner clearfix" id="breadcrumbs-inner">
+													<!-- BREADCRUMBS -->
+													<?php if ($conf['breadcrumbs']): ?>
+													<div class="breadcrumb">
+														<?php tpl_breadcrumbs(); ?>
+													</div>
+													<?php endif ?>
+													<?php if ($conf['youarehere']): ?>
 														<div class="breadcrumb">
-															<?php tpl_breadcrumbs(); ?>
+															<?php tpl_youarehere(); ?>
 														</div>
-														<?php endif ?>
-														<?php if ($conf['youarehere']): ?>
-															<div class="breadcrumb">
-																<?php tpl_youarehere(); ?>
-															</div>
-														<?php endif ?>
-														</div>
-													</div><!-- /breadcrumbs-inner -->
-												</div>
-												<div class="content-region row nested" id="content-region">
-													<div class="content-region-inner inner clearfix" id="content-region-inner">
-														<a id="dokuwiki__content" name="dokuwiki__content"></a>
-														<div class="content-inner block" id="content-inner">
-															<div class="content-inner-inner inner clearfix" id="content-inner-inner">
-																<div class="content-content" id="content-content">
-																	<!-- wikipage start -->
-																	<?php tpl_content() // the main content ?>
-																	<!-- wikipage stop -->
-																</div><!-- /content-content -->
-															</div><!-- /content-inner-inner -->
-														</div><!-- /content-inner -->
-													</div><!-- /content-region-inner -->
-												</div><!-- /content-region -->
-											</div><!-- /content-group-inner -->
-										</div><!-- /content-group -->
-									</div><!-- /main-content-inner -->
-								</div><!-- /main-content -->
-							</div><!-- /main-group-inner -->
-						</div><!-- /main-group -->
-					</div><!-- /main-inner -->
-				</div><!-- /main -->
-			</div>
+													<?php endif ?>
+													</div>
+												</div><!-- /breadcrumbs-inner -->
+											</div>
+											<div class="content-region row nested" id="content-region">
+												<div class="content-region-inner inner clearfix" id="content-region-inner">
+													<a id="dokuwiki__content" name="dokuwiki__content"></a>
+													<div class="content-inner block" id="content-inner">
+														<div class="content-inner-inner inner clearfix" id="content-inner-inner">
+															<div class="content-content" id="content-content">
+																<!-- wikipage start -->
+																<?php tpl_content() // the main content ?>
+																<!-- wikipage stop -->
+															</div><!-- /content-content -->
+														</div><!-- /content-inner-inner -->
+													</div><!-- /content-inner -->
+												</div><!-- /content-region-inner -->
+											</div><!-- /content-region -->
+										</div><!-- /content-group-inner -->
+									</div><!-- /content-group -->
+								</div><!-- /main-content-inner -->
+							</div><!-- /main-content -->
+						</div><!-- /main-group-inner -->
+					</div><!-- /main-group -->
+				</div><!-- /main-inner -->
+			</div><!-- /main -->
+		</div>
 
 <?php /*
 
