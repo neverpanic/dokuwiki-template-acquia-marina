@@ -4,7 +4,7 @@
  *
  */
 
-$conf['tagline']          = 'This is the tagline - explaining what this site is about.';
+$conf['tagline']          = '';
 $conf['discussionPage']   = 'discussion:@ID@';
 $conf['userPage']         = 'user:@USER@:';
 $conf['sidebarID']        = 'sidebar';
