@@ -82,6 +82,47 @@ $showTools = !tpl_getConf('hideTools') || (tpl_getConf('hideTools') && $_SERVER[
 		</div><!-- /header-top -->
 	</div>
 
+	<div class="header-group-wrapper full-width" id="header-group-wrapper">
+		<div class="header-group row grid16-16" id="header-group">
+			<div class="header-group-inner inner clearfix" id="header-group-inner">
+				<div class="clearfix" id="header-group-inner-top">
+					<div class="search-box block" id="search-box">
+						<div class="search-box-inner inner clearfix" id="search-box-inner">
+							<form id="search-theme-form" method="post" accept-charset="UTF-8" action="/">
+								<div>
+									<div class="container-inline" id="search">
+										<input type="text" title="Enter the terms you wish to search for" value="" size="15" id="edit-search-theme-form-header" name="search_theme_form" maxlength="128" class="search-input form-text">
+										<input type="submit" value="Suche" name="op" class="search-submit">
+										<input type="hidden" value="form-0adc73bbe9f0296e3f0bdd760ecd007e" id="form-0adc73bbe9f0296e3f0bdd760ecd007e" name="form_build_id">
+										<input type="hidden" value="search_theme_form" id="edit-search-theme-form" name="form_id">
+									</div>
+									<div class="corner-bottom"><div class="corner-bottom-right corner"></div><div class="corner-bottom-left corner"></div></div>
+								</div>
+							</form>
+						</div><!-- /search-box-inner -->
+					</div><!-- /search-box -->
+				</div>
+				<div class="clearfix" id="header-group-inner-inner">
+					<div class="header-site-info block" id="header-site-info">
+						<div class="header-site-info-inner inner" id="header-site-info-inner">
+							<div id="logo">
+								<a title="Startseite" href="/"><img alt="Startseite" src="/sites/fablab.fau.de/files/acquia_marina_logo.png"></a>
+							</div>
+						</div><!-- /header-site-info-inner -->
+					</div><!-- /header-site-info -->
+				</div>
+				<div class="primary-menu block" id="primary-menu">
+					<div class="primary-menu-inner inner clearfix" id="primary-menu-inner">
+						<ul class="menu sf-menu sf-js-enabled">
+							<li class="leaf first"><a title="zurück zur Startseite" href="/">Startseite</a></li>
+							<li class="leaf active-trail last"><a class="active" title="Wiki" href="/wiki">Wiki</a></li>
+						</ul>
+					</div><!-- /primary-menu-inner -->
+				</div><!-- /primary-menu -->
+			</div><!-- /header-group-inner -->
+		</div><!-- /header-group -->
+	</div>
+
 		<div id="dokuwiki__site">
 			<div class="dokuwiki site mode_<?php echo $ACT ?>">
 				<div id="header-top-wrapper" class="header-top-wrapper full-width">
