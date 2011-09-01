@@ -76,7 +76,7 @@ $showTools = !tpl_getConf('hideTools') || (tpl_getConf('hideTools') && $_SERVER[
 								</div><!-- /inner-wrapper -->
 								<div class="corner-bottom"><div class="corner-bottom-right corner"></div><div class="corner-bottom-left corner"></div></div>
 							</div><!-- /inner -->
-						<div><!-- /block -->
+						</div><!-- /block -->
 					</div><!-- /header-top-inner -->
 				</div><!-- /header-top -->
 			</div>
