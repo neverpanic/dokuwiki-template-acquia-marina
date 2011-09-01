@@ -31,96 +31,96 @@ $showTools = !tpl_getConf('hideTools') || (tpl_getConf('hideTools') && $_SERVER[
 			<div id="skip">
 				<a href="#main-content-area">Zum eigentlichen Inhaltsbereich springen</a>
 			</div>
-		</div>
 
-		<!-- The login-box -->
-		<div class="header-top-wrapper full-width" id="header-top-wrapper">
-			<div class="header-top row grid16-16" id="header-top">
-				<div class="header-top-inner inner clearfix" id="header-top-inner">
-					<div class="block block-user odd first last fusion-horiz-login grid16-16" id="block-user-0">
-						<div class="inner">
-							<div class="corner-top"><div class="corner-top-right corner"></div><div class="corner-top-left corner"></div></div>
-							<div class="inner-wrapper">
-								<div class="inner-inner">
-									<div class="block-icon pngfix"></div>
-									<h2 class="title block-title">Benutzeranmeldung</h2>
-									<div class="content clearfix">
-										<form id="user-login-form" method="post" accept-charset="UTF-8" action="/node?destination=node">
-											<input type="hidden" name="sectok" value="some-tbd-value FIXME FIXME FIXME" />
-											<input type="hidden" name="id" value="title of the current page I guess FIXME FIXME FIXME" />
-											<input type="hidden" name="do" value="login" />
-											<input type="hidden" name="r" value="0" /> <!-- Stay logged in -->
-											<div>
-												<div id="edit-name-wrapper" class="form-item overlabel-wrapper">
-													<label for="edit-name" class="overlabel-apply" style="text-indent: 0px; cursor: text;">Benutzername: <span title="Diese Angabe wird benötigt." class="form-required">*</span></label>
-													<input type="text" class="form-text required" value="" size="15" id="edit-name" name="u" maxlength="60">
+			<!-- The login-box -->
+			<div class="header-top-wrapper full-width" id="header-top-wrapper">
+				<div class="header-top row grid16-16" id="header-top">
+					<div class="header-top-inner inner clearfix" id="header-top-inner">
+						<div class="block block-user odd first last fusion-horiz-login grid16-16" id="block-user-0">
+							<div class="inner">
+								<div class="corner-top"><div class="corner-top-right corner"></div><div class="corner-top-left corner"></div></div>
+								<div class="inner-wrapper">
+									<div class="inner-inner">
+										<div class="block-icon pngfix"></div>
+										<h2 class="title block-title">Benutzeranmeldung</h2>
+										<div class="content clearfix">
+											<form id="user-login-form" method="post" accept-charset="UTF-8" action="/node?destination=node">
+												<input type="hidden" name="sectok" value="some-tbd-value FIXME FIXME FIXME" />
+												<input type="hidden" name="id" value="title of the current page I guess FIXME FIXME FIXME" />
+												<input type="hidden" name="do" value="login" />
+												<input type="hidden" name="r" value="0" /> <!-- Stay logged in -->
+												<div>
+													<div id="edit-name-wrapper" class="form-item overlabel-wrapper">
+														<label for="edit-name" class="overlabel-apply" style="text-indent: 0px; cursor: text;">Benutzername: <span title="Diese Angabe wird benötigt." class="form-required">*</span></label>
+														<input type="text" class="form-text required" value="" size="15" id="edit-name" name="u" maxlength="60">
+													</div>
+													<div id="edit-pass-wrapper" class="form-item overlabel-wrapper">
+														<label for="edit-pass" class="overlabel-apply" style="text-indent: 0px; cursor: text;">Passwort: <span title="Diese Angabe wird benötigt." class="form-required">*</span></label>
+														<input type="password" class="form-text required" size="15" maxlength="60" id="edit-pass" name="p">
+													</div>
+													<input type="submit" class="form-submit" value="Anmelden" id="edit-submit" name="op">
+													<div class="item-list">
+														<ul>
+															<li class="first">
+																<a title="Ein neues Benutzerkonto erstellen." href="/user/register">Registrieren</a>
+															</li>
+															<li class="last">
+																<a title="Ein neues Passwort per E-Mail anfordern." href="/user/password">Neues Passwort anfordern</a>
+															</li>
+														</ul>
+													</div>
 												</div>
-												<div id="edit-pass-wrapper" class="form-item overlabel-wrapper">
-													<label for="edit-pass" class="overlabel-apply" style="text-indent: 0px; cursor: text;">Passwort: <span title="Diese Angabe wird benötigt." class="form-required">*</span></label>
-													<input type="password" class="form-text required" size="15" maxlength="60" id="edit-pass" name="p">
-												</div>
-												<input type="submit" class="form-submit" value="Anmelden" id="edit-submit" name="op">
-												<div class="item-list">
-													<ul>
-														<li class="first">
-															<a title="Ein neues Benutzerkonto erstellen." href="/user/register">Registrieren</a>
-														</li>
-														<li class="last">
-															<a title="Ein neues Passwort per E-Mail anfordern." href="/user/password">Neues Passwort anfordern</a>
-														</li>
-													</ul>
-												</div>
-											</div>
-										</form>
-									</div>
-								</div><!-- /inner-inner -->
-							</div><!-- /inner-wrapper -->
-							<div class="corner-bottom"><div class="corner-bottom-right corner"></div><div class="corner-bottom-left corner"></div></div>
-						</div><!-- /inner -->
-					<div><!-- /block -->
-				</div><!-- /header-top-inner -->
-			</div><!-- /header-top -->
-		</div>
-
-		<div class="header-group-wrapper full-width" id="header-group-wrapper">
-			<div class="header-group row grid16-16" id="header-group">
-				<div class="header-group-inner inner clearfix" id="header-group-inner">
-					<div class="clearfix" id="header-group-inner-top">
-						<div class="search-box block" id="search-box">
-							<div class="search-box-inner inner clearfix" id="search-box-inner">
-								<form id="search-theme-form" method="post" accept-charset="UTF-8" action="/">
-									<div>
-										<div class="container-inline" id="search">
-											<input type="text" title="Enter the terms you wish to search for" value="" size="15" id="edit-search-theme-form-header" name="search_theme_form" maxlength="128" class="search-input form-text">
-											<input type="submit" value="Suche" name="op" class="search-submit">
-											<input type="hidden" value="form-0adc73bbe9f0296e3f0bdd760ecd007e" id="form-0adc73bbe9f0296e3f0bdd760ecd007e" name="form_build_id">
-											<input type="hidden" value="search_theme_form" id="edit-search-theme-form" name="form_id">
+											</form>
 										</div>
-										<div class="corner-bottom"><div class="corner-bottom-right corner"></div><div class="corner-bottom-left corner"></div></div>
+									</div><!-- /inner-inner -->
+								</div><!-- /inner-wrapper -->
+								<div class="corner-bottom"><div class="corner-bottom-right corner"></div><div class="corner-bottom-left corner"></div></div>
+							</div><!-- /inner -->
+						<div><!-- /block -->
+					</div><!-- /header-top-inner -->
+				</div><!-- /header-top -->
+			</div>
+	
+			<div class="header-group-wrapper full-width" id="header-group-wrapper">
+				<div class="header-group row grid16-16" id="header-group">
+					<div class="header-group-inner inner clearfix" id="header-group-inner">
+						<div class="clearfix" id="header-group-inner-top">
+							<div class="search-box block" id="search-box">
+								<div class="search-box-inner inner clearfix" id="search-box-inner">
+									<form id="search-theme-form" method="post" accept-charset="UTF-8" action="/">
+										<div>
+											<div class="container-inline" id="search">
+												<input type="text" title="Enter the terms you wish to search for" value="" size="15" id="edit-search-theme-form-header" name="search_theme_form" maxlength="128" class="search-input form-text">
+												<input type="submit" value="Suche" name="op" class="search-submit">
+												<input type="hidden" value="form-0adc73bbe9f0296e3f0bdd760ecd007e" id="form-0adc73bbe9f0296e3f0bdd760ecd007e" name="form_build_id">
+												<input type="hidden" value="search_theme_form" id="edit-search-theme-form" name="form_id">
+											</div>
+											<div class="corner-bottom"><div class="corner-bottom-right corner"></div><div class="corner-bottom-left corner"></div></div>
+										</div>
+									</form>
+								</div><!-- /search-box-inner -->
+							</div><!-- /search-box -->
+						</div>
+						<div class="clearfix" id="header-group-inner-inner">
+							<div class="header-site-info block" id="header-site-info">
+								<div class="header-site-info-inner inner" id="header-site-info-inner">
+									<div id="logo">
+										<a title="Startseite" href="/"><img alt="Startseite" src="/sites/fablab.fau.de/files/acquia_marina_logo.png"></a>
 									</div>
-								</form>
-							</div><!-- /search-box-inner -->
-						</div><!-- /search-box -->
-					</div>
-					<div class="clearfix" id="header-group-inner-inner">
-						<div class="header-site-info block" id="header-site-info">
-							<div class="header-site-info-inner inner" id="header-site-info-inner">
-								<div id="logo">
-									<a title="Startseite" href="/"><img alt="Startseite" src="/sites/fablab.fau.de/files/acquia_marina_logo.png"></a>
-								</div>
-							</div><!-- /header-site-info-inner -->
-						</div><!-- /header-site-info -->
-					</div>
-					<div class="primary-menu block" id="primary-menu">
-						<div class="primary-menu-inner inner clearfix" id="primary-menu-inner">
-							<ul class="menu sf-menu sf-js-enabled">
-								<li class="leaf first"><a title="zurück zur Startseite" href="/">Startseite</a></li>
-								<li class="leaf active-trail last"><a class="active" title="Wiki" href="/wiki">Wiki</a></li>
-							</ul>
-						</div><!-- /primary-menu-inner -->
-					</div><!-- /primary-menu -->
-				</div><!-- /header-group-inner -->
-			</div><!-- /header-group -->
+								</div><!-- /header-site-info-inner -->
+							</div><!-- /header-site-info -->
+						</div>
+						<div class="primary-menu block" id="primary-menu">
+							<div class="primary-menu-inner inner clearfix" id="primary-menu-inner">
+								<ul class="menu sf-menu sf-js-enabled">
+									<li class="leaf first"><a title="zurück zur Startseite" href="/">Startseite</a></li>
+									<li class="leaf active-trail last"><a class="active" title="Wiki" href="/wiki">Wiki</a></li>
+								</ul>
+							</div><!-- /primary-menu-inner -->
+						</div><!-- /primary-menu -->
+					</div><!-- /header-group-inner -->
+				</div><!-- /header-group -->
+			</div>
 		</div>
 
 		<div id="dokuwiki__site">
@@ -258,6 +258,5 @@ $showTools = !tpl_getConf('hideTools') || (tpl_getConf('hideTools') && $_SERVER[
 
     <div class="no"><?php tpl_indexerWebBug() /* provide DokuWiki housekeeping, required in all templates */ ?></div>
     <!--[if ( IE 6 | IE 7 | IE 8 ) ]></div><![endif]-->
-</div>
 </body>
 </html>
