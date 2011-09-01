@@ -23,6 +23,7 @@ $showTools = !tpl_getConf('hideTools') || (tpl_getConf('hideTools') && $_SERVER[
 
 <?php // TODO: Add conditional logged-in or not-logged-in ?>
 <body id="pid-wiki" class="front page-node no-sidebars layout-main sidebars-both-last font-size-14 grid-type-fluid grid-width-16 fluid-90">
+	<?php html_msgarea() // occasional error and info messages on top of the page ?>
 	<?php /* classes mode_<action> are added to make it possible to e.g. style a page differently if it's in edit mode,
 		see http://www.dokuwiki.org/devel:action_modes for a list of action modes */ ?>
 	<?php /* .dokuwiki should always be in one of the surrounding elements (e.g. plugins and templates depend on it) */ ?>
