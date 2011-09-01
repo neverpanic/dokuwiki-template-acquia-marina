@@ -164,6 +164,7 @@ $logged_in = $_SERVER['REMOTE_USER'];
 														<li class="user">
 															<?php tpl_userinfo(); ?>
 														</li>
+														<?php endif ?>
 														<?php
 															 tpl_action('admin',    1, 'li');
 															_tpl_action('userpage', 1, 'li');
