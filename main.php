@@ -168,6 +168,22 @@ $showTools = !tpl_getConf('hideTools') || (tpl_getConf('hideTools') && $_SERVER[
 										<!-- content group: width = grid_width - (sidebar_first_width + sidebar_last_width) -->
 										<div style="width:100%" class="content-group row nested " id="content-group">
 											<div class="content-group-inner inner clearfix" id="content-group-inner">
+												<div class="breadcrumbs block" id="breadcrumbs">
+													<div class="breadcrumbs-inner inner clearfix" id="breadcrumbs-inner">
+														<!-- BREADCRUMBS -->
+														<?php if ($conf['breadcrumbs']): ?>
+														<div class="breadcrumb">
+															<?php tpl_breadcrumbs(); ?>
+														</div>
+														<?php endif ?>
+														<?php if ($conf['youarehere']): ?>
+															<div class="breadcrumb">
+																<?php tpl_youarehere(); ?>
+															</div>
+														<?php endif ?>
+														</div>
+													</div><!-- /breadcrumbs-inner -->
+												</div>
 												<div class="content-region row nested" id="content-region">
 													<div class="content-region-inner inner clearfix" id="content-region-inner">
 														<a id="dokuwiki__content" name="dokuwiki__content"></a>
@@ -175,8 +191,8 @@ $showTools = !tpl_getConf('hideTools') || (tpl_getConf('hideTools') && $_SERVER[
 															<div class="content-inner-inner inner clearfix" id="content-inner-inner">
 																<div class="content-content" id="content-content">
 																	<!-- wikipage start -->
-                   													<?php tpl_content() // the main content ?>
-                   													<!-- wikipage stop -->
+																	<?php tpl_content() // the main content ?>
+																	<!-- wikipage stop -->
 																</div><!-- /content-content -->
 															</div><!-- /content-inner-inner -->
 														</div><!-- /content-inner -->
