@@ -29,8 +29,8 @@ $showTools = !tpl_getConf('hideTools') || (tpl_getConf('hideTools') && $_SERVER[
 	<?php /* .dokuwiki should always be in one of the surrounding elements (e.g. plugins and templates depend on it) */ ?>
 	<div id="page" class="page">
 		<div id="page-inner" class="page-inner">
-			<div id="skip">
-				<a href="#main-content-area">Zum eigentlichen Inhaltsbereich springen</a>
+			<div id="skip" class="a11y">
+				<a href="#dokuwiki__content"><?php echo tpl_getLang('skip_to_content'); ?></a></li>
 			</div>
 
 			<!-- The login-box -->
@@ -106,7 +106,10 @@ $showTools = !tpl_getConf('hideTools') || (tpl_getConf('hideTools') && $_SERVER[
 							<div class="header-site-info block" id="header-site-info">
 								<div class="header-site-info-inner inner" id="header-site-info-inner">
 									<div id="logo">
-										<a title="Startseite" href="/"><img alt="Startseite" src="/sites/fablab.fau.de/files/acquia_marina_logo.png"></a>
+										<?php tpl_link(wl(), '<img src="' . ml('logo.png') . '" alt="' . $conf['title'] . '" />', 'id="dokuwiki__top" accesskey="h" title="[H]"'); ?>
+										<?php if (tpl_getConf('tagline')): ?>
+										<p class="claim"><?php echo tpl_getConf('tagline'); ?></p>
+										<?php endif ?>
 									</div>
 								</div><!-- /header-site-info-inner -->
 							</div><!-- /header-site-info -->
@@ -123,14 +126,6 @@ $showTools = !tpl_getConf('hideTools') || (tpl_getConf('hideTools') && $_SERVER[
 				</div><!-- /header-group -->
 			</div>
 <?php /*
-		<div id="dokuwiki__site">
-			<div class="dokuwiki site mode_<?php echo $ACT ?>">
-				<div id="header-top-wrapper" class="header-top-wrapper full-width">
-					<div id="header-top" class="header-top row grid16-16">
-						<div id="header-top-inner" class="header-top-inner inner clearfix">
-							
-			<?php html_msgarea() // occasional error and info messages on top of the page ?>
-        <?php _tpl_include('header.html') ?>
 
         <!-- ********** HEADER ********** -->
         <div id="dokuwiki__header"><div class="pad">
