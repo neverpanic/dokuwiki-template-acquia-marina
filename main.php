@@ -125,26 +125,28 @@ $showTools = !tpl_getConf('hideTools') || (tpl_getConf('hideTools') && $_SERVER[
 					</div><!-- /header-group-inner -->
 				</div><!-- /header-group -->
 			</div>
+
+			<div class="preface-top-wrapper full-width" id="preface-top-wrapper">
+				<div class="preface-top row grid16-16" id="preface-top">
+					<div class="preface-top-inner inner clearfix" id="preface-top-inner">
+						<!-- BREADCRUMBS -->
+					<?php if ($conf['breadcrumbs']): ?>
+						<div class="breadcrumbs">
+							<?php tpl_breadcrumbs(); ?>
+						</div>
+					<?php endif ?>
+					<?php if ($conf['youarehere']): ?>
+						<div class="breadcrumbs">
+							<?php tpl_youarehere(); ?>
+						</div>
+					<?php endif ?>
+					</div><!-- /preface-top-inner -->
+				</div><!-- /preface-top -->
+			</div>
 <?php /*
 
         <!-- ********** HEADER ********** -->
         <div id="dokuwiki__header"><div class="pad">
-
-            <div class="headings">
-                <h1><?php tpl_link(wl(),$conf['title'],'id="dokuwiki__top" accesskey="h" title="[H]"') ?></h1>
-                <?php /* how to insert logo instead (if no CSS image replacement technique is used):
-                        upload your logo into the data/media folder (root of the media manager) and replace 'logo.png' accordingly:
-                        tpl_link(wl(),'<img src="'.ml('logo.png').'" alt="'.$conf['title'].'" />','id="dokuwiki__top" accesskey="h" title="[H]"') * ?>
-                <?php if (tpl_getConf('tagline')): ?>
-                    <p class="claim"><?php echo tpl_getConf('tagline') ?></p>
-                <?php endif ?>
-
-                <ul class="a11y">
-                    <li><a href="#dokuwiki__content"><?php echo tpl_getLang('skip_to_content') ?></a></li>
-                </ul>
-                <div class="clearer"></div>
-            </div>
-
             <div class="tools">
                 <!-- USER TOOLS -->
                 <?php if ($conf['useacl'] && $showTools): ?>
