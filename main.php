@@ -154,6 +154,26 @@ $logged_in = $_SERVER['REMOTE_USER'];
 													<?php tpl_action('recent', 1, 'li'); ?>	
 													<?php tpl_action('index',  1, 'li'); ?>
 												</ul>
+
+												<!-- USER TOOLS -->
+												<?php if ($conf['useacl'] && $showTools): ?>
+												<div id="dokuwiki__usertools">
+													<h2 class="title block-title a11y"><?php echo tpl_getLang('user_tools') ?></h2>
+													<ul class="menu">
+														<?php if ($_SERVER['REMOTE_USER']): ?>
+														<li class="user">
+															<?php tpl_userinfo(); ?>
+														</li>
+														<?php
+															 tpl_action('admin',    1, 'li');
+															_tpl_action('userpage', 1, 'li');
+															 tpl_action('profile',  1, 'li');
+															_tpl_action('register', 1, 'li'); /* DW versions > 2011-02-20 can use the core function tpl_action('register', 1, 'li') */
+															 tpl_action('login',    1, 'li');
+														?>
+													</ul>
+												</div>
+												<?php endif ?>
 											</div>
 										</div><!-- /inner-inner -->
 									</div><!-- /inner-wrapper -->
