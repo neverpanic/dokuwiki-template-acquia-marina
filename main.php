@@ -121,7 +121,6 @@ $showTools = !tpl_getConf('hideTools') || (tpl_getConf('hideTools') && $_SERVER[
 					</div><!-- /header-group-inner -->
 				</div><!-- /header-group -->
 			</div>
-		</div>
 
 		<div id="dokuwiki__site">
 			<div class="dokuwiki site mode_<?php echo $ACT ?>">
