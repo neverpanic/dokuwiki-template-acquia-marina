@@ -29,7 +29,9 @@ div.editButtons input.button {
 	text-transform: uppercase;
 }
 
-form.button input.button:hover {
+form.button input.button:hover,
+form#page__revisions input.button:hover,
+div.editButtons input.button:hover {
 	background-position: left bottom;
 	cursor: pointer;
 }
