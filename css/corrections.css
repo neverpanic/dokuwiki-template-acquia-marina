@@ -13,6 +13,7 @@ div.editButtons {
 
 form.button input.button,
 form#page__revisions input.button,
+form.plugins input.button,
 div.editButtons input.button {
 	-moz-outline-radius: 4px 4px 4px 4px;
 	background: url("/sites/all/themes/acquia_marina/images/blue-button.png") repeat-x scroll 0 0 transparent;
@@ -30,6 +31,7 @@ div.editButtons input.button {
 }
 
 form.button input.button:hover,
+form.plugins input.button:hover,
 form#page__revisions input.button:hover,
 div.editButtons input.button:hover {
 	background-position: left bottom;
