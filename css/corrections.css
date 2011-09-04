@@ -1,3 +1,7 @@
+#preface-top-inner {
+	margin-bottom: 20px; /* center buttons vertically in ribbon */
+}
+
 form.button {
 	display: inline;
 }
