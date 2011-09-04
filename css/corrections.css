@@ -27,3 +27,7 @@ form.button input.button:hover {
 	cursor: pointer;
 }
 
+form.btn_secedit {
+	text-align: right;
+}
+
