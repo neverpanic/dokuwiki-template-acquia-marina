@@ -141,6 +141,27 @@ $logged_in = $_SERVER['REMOTE_USER'];
 					<div class="main-inner inner clearfix" id="main-inner">
 						<div class="sidebar-first row nested grid16-4" id="sidebar-first">
 							<div class="sidebar-first-inner inner clearfix" id="sidebar-first-inner">
+								<div class="block block-user odd first last fusion-bold-links marina-rounded-corners marina-title-green grid16-16" id="block-user-3">
+									<div class="inner">
+										<div class="corner-top"><div class="corner-top-right corner"></div><div class="corner-top-left corner"></div></div>
+										<div class="inner-wrapper">
+											<div id="dokuwiki__toc" class="inner-inner" style="border: medium none; position: relative;">
+												<div class="block-icon pngfix"></div>
+												<!-- TOC -->
+												<h2 class="title block-title a11y"><?php echo tpl_getLang('toc'); ?></h2>
+												<?php
+													// render content into variable, so tpl_toc() is populated
+													ob_start();
+													tpl_content(false);
+													$dokuwiki_content = ob_get_clean();
+
+													tpl_toc();
+												?>
+											</div><!-- /inner-inner -->
+										</div><!-- /inner-wrapper -->
+										<div class="corner-bottom"><div class="corner-bottom-right corner"></div><div class="corner-bottom-left corner"></div></div>
+									</div><!-- /inner -->
+								</div><!-- /block -->
 								<div class="block block-user odd first last fusion-bold-links marina-rounded-corners marina-title-green grid16-16" id="block-user-1">
 									<div class="inner">
 										<div class="corner-top"><div class="corner-top-right corner"></div><div class="corner-top-left corner"></div></div>
@@ -203,12 +224,12 @@ $logged_in = $_SERVER['REMOTE_USER'];
 														<!-- BREADCRUMBS -->
 														<?php if ($conf['breadcrumbs']): ?>
 														<div class="breadcrumb">
-															<?php tpl_breadcrumbs(); ?>
+															<?php tpl_breadcrumbs('»'); ?>
 														</div>
 														<?php endif ?>
 														<?php if ($conf['youarehere']): ?>
 															<div class="breadcrumb">
-																<?php tpl_youarehere(); ?>
+																<?php tpl_youarehere('»'); ?>
 															</div>
 														<?php endif ?>
 														</div>
@@ -221,7 +242,7 @@ $logged_in = $_SERVER['REMOTE_USER'];
 															<div class="content-inner-inner inner clearfix" id="content-inner-inner">
 																<div class="content-content" id="content-content">
 																	<!-- wikipage start -->
-																	<?php tpl_content() // the main content ?>
+																	<?php print($dokuwiki_content); // the main content without TOC (rendered and buffered in the sidebar, where the toc gets printed) ?>
 																	<!-- wikipage stop -->
 																</div><!-- /content-content -->
 															</div><!-- /content-inner-inner -->
