@@ -64,17 +64,18 @@ $logged_in = $_SERVER['REMOTE_USER'];
 						<div class="clearfix" id="header-group-inner-top">
 							<div class="search-box block" id="search-box">
 								<div class="search-box-inner inner clearfix" id="search-box-inner">
-									<?php tpl_searchform(); ?>
-									<form id="search-theme-form" method="post" accept-charset="UTF-8" action="/">
-										<div>
-											<div class="container-inline" id="search">
-												<input type="text" title="Suchbegriffe eingeben" accesskey="f" value="" size="15" id="edit-search-theme-form-header" name="id" class="search-input form-text">
-												<input type="submit" value="Suche" name="op" class="search-submit">
-												<input type="hidden" name="do" value="search" />
+									<div id="dw__search">
+										<form id="search-theme-form" method="post" accept-charset="UTF-8" action="<?php print(wl()); ?>">
+											<div>
+												<div class="container-inline" id="search">
+													<input type="text" title="Suchbegriffe eingeben" accesskey="f" value="" size="15" id="edit-search-theme-form-header" name="id" class="search-input form-text">
+													<input type="submit" value="Suche" name="op" class="search-submit">
+													<input type="hidden" name="do" value="search" />
+												</div>
+												<div class="corner-bottom"><div class="corner-bottom-right corner"></div><div class="corner-bottom-left corner"></div></div>
 											</div>
-											<div class="corner-bottom"><div class="corner-bottom-right corner"></div><div class="corner-bottom-left corner"></div></div>
-										</div>
-									</form>
+										</form>
+									</div>
 								</div><!-- /search-box-inner -->
 							</div><!-- /search-box -->
 						</div>
