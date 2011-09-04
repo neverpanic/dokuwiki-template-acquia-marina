@@ -188,6 +188,32 @@ $logged_in = $_SERVER['REMOTE_USER'];
 											<div class="corner-bottom"><div class="corner-bottom-right corner"></div><div class="corner-bottom-left corner"></div></div>
 										</div><!-- /inner -->
 									</div><!-- /block -->
+									<?php if ($showTools): ?>
+									<div class="block block-user odd first last fusion-bold-links marina-rounded-corners marina-title-green grid16-16" id="block-user-4">
+										<div class="inner">
+											<div class="corner-top"><div class="corner-top-right corner"></div><div class="corner-top-left corner"></div></div>
+											<div class="inner-wrapper">
+												<div id="dokuwiki__pagetools" class="inner-inner" style="border: medium none; position: relative;">
+													<div class="block-icon pngfix"></div>
+													<!-- PAGE TOOLS -->
+													<h2 class="title block-title a11y"><?php echo tpl_getLang('page_tools') ?></h2>
+													<ul class="menu">
+														<?php
+															 tpl_action('edit',       1, 'li');
+															_tpl_action('discussion', 1, 'li');
+															 tpl_action('history',    1, 'li');
+															 tpl_action('backlink',   1, 'li');
+															 tpl_action('subscribe',  1, 'li');
+															 tpl_action('revert',     1, 'li');
+															 tpl_action('top',        1, 'li');
+														?>
+													</ul>
+												</div><!-- /inner-inner -->
+											</div><!-- /inner-wrapper -->
+											<div class="corner-bottom"><div class="corner-bottom-right corner"></div><div class="corner-bottom-left corner"></div></div>
+										</div><!-- /inner -->
+									</div><!-- /block -->
+									<?php endif ?>
 									<?php if ($conf['useacl'] && $showTools): ?>
 									<div class="block block-user odd first last fusion-bold-links marina-rounded-corners marina-title-green grid16-16" id="block-user-2">
 										<div class="inner">
@@ -271,31 +297,6 @@ $logged_in = $_SERVER['REMOTE_USER'];
 
 <?php /*
         <div class="wrapper">
-
-            <!-- ********** ASIDE ********** -->
-            <div id="dokuwiki__aside"><div class="pad include">
-                <?php tpl_include_page(tpl_getConf('sidebarID')) // includes the given wiki page ?>
-                <div class="clearer"></div>
-            </div></div><!-- /aside -->
-
-            <!-- ********** CONTENT ********** -->
-            <div id="dokuwiki__content"><div class="pad">
-                <?php tpl_flush() // flush the output buffer ?>
-                <?php _tpl_include('pageheader.html') ?>
-
-                <div class="page">
-                    <!-- wikipage start -->
-                    <?php tpl_content() // the main content ?>
-                    <!-- wikipage stop -->
-                    <div class="clearer"></div>
-                </div>
-
-                <?php tpl_flush() ?>
-                <?php _tpl_include('pagefooter.html') ?>
-            </div></div><!-- /content -->
-
-            <div class="clearer"></div>
-            <hr class="a11y" />
 
             <!-- PAGE ACTIONS -->
             <?php if ($showTools): ?>
