@@ -245,7 +245,7 @@ $logged_in = $_SERVER['REMOTE_USER'];
 														<?php endif ?>
 														<?php if ($conf['youarehere']): ?>
 															<div class="breadcrumb">
-																<?php tpl_youarehere('»'); ?>
+																<?php tpl_youarehere(' » '); ?>
 															</div>
 														<?php endif ?>
 														</div>
