@@ -141,6 +141,18 @@ $logged_in = $_SERVER['REMOTE_USER'];
 					<div class="main-inner inner clearfix" id="main-inner">
 						<div class="sidebar-first row nested grid16-4" id="sidebar-first">
 							<div class="sidebar-first-inner inner clearfix" id="sidebar-first-inner">
+								<?php
+									// render content into variable, so tpl_topc() is populated
+									ob_start();
+									tpl_content(false);
+									$dokuwiki_content = ob_get_clean();
+
+									// render toc into variable
+									ob_start();
+									tpl_toc();
+									$dokuwiki_toc = ob_get_clean();
+								?>
+								<?php if (!empty($dokuwiki_toc)): // only show toc if non-empty ?>
 								<div class="block block-user odd first last fusion-bold-links marina-rounded-corners marina-title-green grid16-16" id="block-user-3">
 									<div class="inner">
 										<div class="corner-top"><div class="corner-top-right corner"></div><div class="corner-top-left corner"></div></div>
@@ -150,18 +162,14 @@ $logged_in = $_SERVER['REMOTE_USER'];
 												<!-- TOC -->
 												<h2 class="title block-title a11y"><?php print($lang['toc']); ?></h2>
 												<?php
-													// render content into variable, so tpl_toc() is populated
-													ob_start();
-													tpl_content(false);
-													$dokuwiki_content = ob_get_clean();
-
-													tpl_toc();
+													print($dokuwiki_toc);
 												?>
 											</div><!-- /inner-inner -->
 										</div><!-- /inner-wrapper -->
 										<div class="corner-bottom"><div class="corner-bottom-right corner"></div><div class="corner-bottom-left corner"></div></div>
 									</div><!-- /inner -->
 								</div><!-- /block -->
+								<?php endif; ?>
 								<div class="block block-user odd first last fusion-bold-links marina-rounded-corners marina-title-green grid16-16" id="block-user-1">
 									<div class="inner">
 										<div class="corner-top"><div class="corner-top-right corner"></div><div class="corner-top-left corner"></div></div>
