@@ -149,7 +149,7 @@ function _tpl_html_login() {
 	global $ID;
 
 	if (false === ($html_form = file_get_contents(DOKU_TPL . 'login.html'))) {
-		print("<!-- Error reading login.html -->\n");
+		print("<!-- Error reading %s -->\n", DOKU_TPL . 'login.html');
 		return;
 	}
 	$html_form = str_replace(
