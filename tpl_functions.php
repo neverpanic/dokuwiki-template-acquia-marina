@@ -148,7 +148,10 @@ function _tpl_html_login() {
 	global $conf;
 	global $ID;
 
-	$html_form = file_get_contents(DOKU_TPL . '/login.html');
+	if (false === ($html_form = file_get_contents(DOKU_TPL . 'login.html'))) {
+		print("<!-- Error reading login.html -->\n");
+		return;
+	}
 	$html_form = str_replace(
 		array(
 			'@ACTION@',
