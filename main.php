@@ -148,7 +148,7 @@ $logged_in = $_SERVER['REMOTE_USER'];
 											<div id="dokuwiki__toc" class="inner-inner" style="border: medium none; position: relative;">
 												<div class="block-icon pngfix"></div>
 												<!-- TOC -->
-												<h2 class="title block-title a11y"><?php echo tpl_getLang('toc'); ?></h2>
+												<h2 class="title block-title a11y"><?php print($lang['toc']); ?></h2>
 												<?php
 													// render content into variable, so tpl_toc() is populated
 													ob_start();
