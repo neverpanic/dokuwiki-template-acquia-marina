@@ -120,7 +120,7 @@ $logged_in = $_SERVER['REMOTE_USER'];
 						<div class="primary-menu block" id="primary-menu">
 							<div class="primary-menu-inner inner clearfix" id="primary-menu-inner">
 								<ul class="menu sf-menu sf-js-enabled">
-								<li class="leaf first"><a title="<?php print(tpl_getLang('back_to_website_titletag')); ?>" href="/"><?php print(tpl_getLang('back_to_website')); ?></a></li>
+								<li class="leaf first"><a title="<?php print(tpl_getLang('back_to_website_title')); ?>" href="/"><?php print(tpl_getLang('back_to_website')); ?></a></li>
 									<li class="leaf active-trail last"><a class="active" title="Wiki" href="/wiki">Wiki</a></li>
 								</ul>
 							</div><!-- /primary-menu-inner -->
