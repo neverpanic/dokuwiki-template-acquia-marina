@@ -67,11 +67,9 @@ $logged_in = $_SERVER['REMOTE_USER'];
 									<form id="search-theme-form" method="post" accept-charset="UTF-8" action="/">
 										<div>
 											<div class="container-inline" id="search">
-                    <?php tpl_searchform() ?>
-												<input type="text" title="Enter the terms you wish to search for" value="" size="15" id="edit-search-theme-form-header" name="search_theme_form" maxlength="128" class="search-input form-text">
+												<input type="text" title="Suchbegriffe eingeben" accesskey="f" value="" size="15" id="edit-search-theme-form-header" name="id" class="search-input form-text">
 												<input type="submit" value="Suche" name="op" class="search-submit">
-												<input type="hidden" value="form-0adc73bbe9f0296e3f0bdd760ecd007e" id="form-0adc73bbe9f0296e3f0bdd760ecd007e" name="form_build_id">
-												<input type="hidden" value="search_theme_form" id="edit-search-theme-form" name="form_id">
+												<input type="hidden" name="do" value="search" />
 											</div>
 											<div class="corner-bottom"><div class="corner-bottom-right corner"></div><div class="corner-bottom-left corner"></div></div>
 										</div>
