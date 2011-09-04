@@ -148,8 +148,8 @@ function _tpl_html_login() {
 	global $conf;
 	global $ID;
 
-	if (false === ($html_form = file_get_contents(DOKU_TPL . 'login.html'))) {
-		printf("<!-- Error reading %s -->\n", DOKU_TPL . 'login.html');
+	if (false === ($html_form = file_get_contents(dirname(__FILE__) . '/login.html'))) {
+		printf("<!-- Error reading %s -->\n", dirname(__FILE__) . '/login.html');
 		return;
 	}
 	$html_form = str_replace(
