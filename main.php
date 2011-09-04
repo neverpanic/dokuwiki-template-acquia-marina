@@ -141,81 +141,83 @@ $logged_in = $_SERVER['REMOTE_USER'];
 					<div class="main-inner inner clearfix" id="main-inner">
 						<div class="sidebar-first row nested grid16-4" id="sidebar-first">
 							<div class="sidebar-first-inner inner clearfix" id="sidebar-first-inner">
-								<?php
-									// render content into variable, so tpl_topc() is populated
-									ob_start();
-									tpl_content(false);
-									$dokuwiki_content = ob_get_clean();
+								<div id="dokuwiki__aside">
+									<?php
+										// render content into variable, so tpl_topc() is populated
+										ob_start();
+										tpl_content(false);
+										$dokuwiki_content = ob_get_clean();
 
-									// render toc into variable
-									ob_start();
-									tpl_toc();
-									$dokuwiki_toc = ob_get_clean();
-								?>
-								<?php if (!empty($dokuwiki_toc)): // only show toc if non-empty ?>
-								<div class="block block-user odd first last fusion-bold-links marina-rounded-corners marina-title-green grid16-16" id="block-user-3">
-									<div class="inner">
-										<div class="corner-top"><div class="corner-top-right corner"></div><div class="corner-top-left corner"></div></div>
-										<div class="inner-wrapper">
-											<div id="dokuwiki__toc" class="inner-inner" style="border: medium none; position: relative;">
-												<div class="block-icon pngfix"></div>
-												<!-- TOC -->
-												<h2 class="title block-title a11y"><?php print($lang['toc']); ?></h2>
-												<?php
-													print($dokuwiki_toc);
-												?>
-											</div><!-- /inner-inner -->
-										</div><!-- /inner-wrapper -->
-										<div class="corner-bottom"><div class="corner-bottom-right corner"></div><div class="corner-bottom-left corner"></div></div>
-									</div><!-- /inner -->
-								</div><!-- /block -->
-								<?php endif; ?>
-								<div class="block block-user odd first last fusion-bold-links marina-rounded-corners marina-title-green grid16-16" id="block-user-1">
-									<div class="inner">
-										<div class="corner-top"><div class="corner-top-right corner"></div><div class="corner-top-left corner"></div></div>
-										<div class="inner-wrapper">
-											<div id="dokuwiki__sitetools" class="inner-inner" style="border: medium none; position: relative;">
-												<div class="block-icon pngfix"></div>
-												<!-- SITE TOOLS -->
-												<h2 class="title block-title a11y"><?php echo tpl_getLang('site_tools'); ?></h2>
-												<ul class="menu">
-													<?php tpl_action('recent', 1, 'li'); ?>	
-													<?php tpl_action('index',  1, 'li'); ?>
-												</ul>
-											</div><!-- /inner-inner -->
-										</div><!-- /inner-wrapper -->
-										<div class="corner-bottom"><div class="corner-bottom-right corner"></div><div class="corner-bottom-left corner"></div></div>
-									</div><!-- /inner -->
-								</div><!-- /block -->
-								<?php if ($conf['useacl'] && $showTools): ?>
-								<div class="block block-user odd first last fusion-bold-links marina-rounded-corners marina-title-green grid16-16" id="block-user-2">
-									<div class="inner">
-										<div class="corner-top"><div class="corner-top-right corner"></div><div class="corner-top-left corner"></div></div>
-										<div class="inner-wrapper">
-											<div id="dokuwiki__usertools" class="inner-inner" style="border: medium none; position: relative;">
-												<div class="block-icon pngfix"></div>
-												<!-- USER TOOLS -->
-												<h2 class="title block-title a11y"><?php echo tpl_getLang('user_tools') ?></h2>
-												<ul class="menu">
-													<?php if ($_SERVER['REMOTE_USER']): ?>
-													<li class="user">
-														<?php tpl_userinfo(); ?>
-													</li>
-													<?php endif ?>
+										// render toc into variable
+										ob_start();
+										tpl_toc();
+										$dokuwiki_toc = ob_get_clean();
+									?>
+									<?php if (!empty($dokuwiki_toc)): // only show toc if non-empty ?>
+									<div class="block block-user odd first last fusion-bold-links marina-rounded-corners marina-title-green grid16-16" id="block-user-3">
+										<div class="inner">
+											<div class="corner-top"><div class="corner-top-right corner"></div><div class="corner-top-left corner"></div></div>
+											<div class="inner-wrapper">
+												<div id="dokuwiki__toc" class="inner-inner" style="border: medium none; position: relative;">
+													<div class="block-icon pngfix"></div>
+													<!-- TOC -->
+													<h2 class="title block-title a11y"><?php print($lang['toc']); ?></h2>
 													<?php
-														 tpl_action('admin',    1, 'li');
-														_tpl_action('userpage', 1, 'li');
-														 tpl_action('profile',  1, 'li');
-														_tpl_action('register', 1, 'li'); /* DW versions > 2011-02-20 can use the core function tpl_action('register', 1, 'li') */
-														 tpl_action('login',    1, 'li');
+														print($dokuwiki_toc);
 													?>
-												</ul>
-											</div><!-- /inner-inner -->
-										</div><!-- /inner-wrapper -->
-										<div class="corner-bottom"><div class="corner-bottom-right corner"></div><div class="corner-bottom-left corner"></div></div>
-									</div><!-- /inner -->
-								</div><!-- /block -->
-								<?php endif ?>
+												</div><!-- /inner-inner -->
+											</div><!-- /inner-wrapper -->
+											<div class="corner-bottom"><div class="corner-bottom-right corner"></div><div class="corner-bottom-left corner"></div></div>
+										</div><!-- /inner -->
+									</div><!-- /block -->
+									<?php endif; ?>
+									<div class="block block-user odd first last fusion-bold-links marina-rounded-corners marina-title-green grid16-16" id="block-user-1">
+										<div class="inner">
+											<div class="corner-top"><div class="corner-top-right corner"></div><div class="corner-top-left corner"></div></div>
+											<div class="inner-wrapper">
+												<div id="dokuwiki__sitetools" class="inner-inner" style="border: medium none; position: relative;">
+													<div class="block-icon pngfix"></div>
+													<!-- SITE TOOLS -->
+													<h2 class="title block-title a11y"><?php echo tpl_getLang('site_tools'); ?></h2>
+													<ul class="menu">
+														<?php tpl_action('recent', 1, 'li'); ?>	
+														<?php tpl_action('index',  1, 'li'); ?>
+													</ul>
+												</div><!-- /inner-inner -->
+											</div><!-- /inner-wrapper -->
+											<div class="corner-bottom"><div class="corner-bottom-right corner"></div><div class="corner-bottom-left corner"></div></div>
+										</div><!-- /inner -->
+									</div><!-- /block -->
+									<?php if ($conf['useacl'] && $showTools): ?>
+									<div class="block block-user odd first last fusion-bold-links marina-rounded-corners marina-title-green grid16-16" id="block-user-2">
+										<div class="inner">
+											<div class="corner-top"><div class="corner-top-right corner"></div><div class="corner-top-left corner"></div></div>
+											<div class="inner-wrapper">
+												<div id="dokuwiki__usertools" class="inner-inner" style="border: medium none; position: relative;">
+													<div class="block-icon pngfix"></div>
+													<!-- USER TOOLS -->
+													<h2 class="title block-title a11y"><?php echo tpl_getLang('user_tools') ?></h2>
+													<ul class="menu">
+														<?php if ($_SERVER['REMOTE_USER']): ?>
+														<li class="user">
+															<?php tpl_userinfo(); ?>
+														</li>
+														<?php endif ?>
+														<?php
+															 tpl_action('admin',    1, 'li');
+															_tpl_action('userpage', 1, 'li');
+															 tpl_action('profile',  1, 'li');
+															_tpl_action('register', 1, 'li'); /* DW versions > 2011-02-20 can use the core function tpl_action('register', 1, 'li') */
+															 tpl_action('login',    1, 'li');
+														?>
+													</ul>
+												</div><!-- /inner-inner -->
+											</div><!-- /inner-wrapper -->
+											<div class="corner-bottom"><div class="corner-bottom-right corner"></div><div class="corner-bottom-left corner"></div></div>
+										</div><!-- /inner -->
+									</div><!-- /block -->
+									<?php endif ?>
+								</div>
 							</div><!-- /sidebar-first-inner -->
 						</div><!-- /sidebar-first -->
 
@@ -268,35 +270,6 @@ $logged_in = $_SERVER['REMOTE_USER'];
 			</div>
 
 <?php /*
-
-                <!-- SITE TOOLS -->
-                <div id="dokuwiki__sitetools">
-                    <h3 class="a11y"><?php echo tpl_getLang('site_tools') ?></h3>
-                    <?php tpl_searchform() ?>
-                    <ul>
-                        <?php
-                            tpl_action('recent', 1, 'li');
-                            tpl_action('index', 1, 'li');
-                        ?>
-                    </ul>
-                </div>
-
-            </div>
-            <div class="clearer"></div>
-
-            <!-- BREADCRUMBS -->
-            <?php if($conf['breadcrumbs']){ ?>
-                <div class="breadcrumbs"><?php tpl_breadcrumbs() ?></div>
-            <?php } ?>
-            <?php if($conf['youarehere']){ ?>
-                <div class="breadcrumbs"><?php tpl_youarehere() ?></div>
-            <?php } ?>
-
-            <div class="clearer"></div>
-            <hr class="a11y" />
-        </div></div><!-- /header -->
-
-
         <div class="wrapper">
 
             <!-- ********** ASIDE ********** -->
