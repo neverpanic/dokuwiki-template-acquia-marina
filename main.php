@@ -45,6 +45,7 @@ $logged_in = $_SERVER['REMOTE_USER'];
 									<div class="inner-inner">
 										<div class="block-icon pngfix"></div>
 										<h2 class="title block-title">Benutzeranmeldung</h2>
+										<?php html_login() ?>
 										<div class="content clearfix">
 											<form id="user-login-form" method="post" accept-charset="UTF-8" action="/node?destination=node">
 												<input type="hidden" name="sectok" value="some-tbd-value FIXME FIXME FIXME" />
