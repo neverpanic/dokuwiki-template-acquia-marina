@@ -55,3 +55,11 @@ a.breadcrumbs {
 #plugin__manager .common input.edit {
 	width: 16em !important;
 }
+
+/* Make diffs colored */
+.diff-deletedline {
+	color: red;
+}
+.diff-addedline {
+	color: green;
+}
