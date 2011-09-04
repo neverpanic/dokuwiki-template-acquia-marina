@@ -45,35 +45,8 @@ $logged_in = $_SERVER['REMOTE_USER'];
 									<div class="inner-inner">
 										<div class="block-icon pngfix"></div>
 										<h2 class="title block-title">Benutzeranmeldung</h2>
-										<?php html_login() ?>
-										<div class="content clearfix">
-											<form id="user-login-form" method="post" accept-charset="UTF-8" action="/node?destination=node">
-												<input type="hidden" name="sectok" value="some-tbd-value FIXME FIXME FIXME" />
-												<input type="hidden" name="id" value="title of the current page I guess FIXME FIXME FIXME" />
-												<input type="hidden" name="do" value="login" />
-												<input type="hidden" name="r" value="0" /> <!-- Stay logged in -->
-												<div>
-													<div id="edit-name-wrapper" class="form-item overlabel-wrapper">
-														<label for="edit-name" class="overlabel-apply" style="text-indent: 0px; cursor: text;">Benutzername: <span title="Diese Angabe wird benötigt." class="form-required">*</span></label>
-														<input type="text" class="form-text required" value="" size="15" id="edit-name" name="u" maxlength="60">
-													</div>
-													<div id="edit-pass-wrapper" class="form-item overlabel-wrapper">
-														<label for="edit-pass" class="overlabel-apply" style="text-indent: 0px; cursor: text;">Passwort: <span title="Diese Angabe wird benötigt." class="form-required">*</span></label>
-														<input type="password" class="form-text required" size="15" maxlength="60" id="edit-pass" name="p">
-													</div>
-													<input type="submit" class="form-submit" value="Anmelden" id="edit-submit" name="op">
-													<div class="item-list">
-														<ul>
-															<li class="first">
-																<a title="Ein neues Benutzerkonto erstellen." href="/user/register">Registrieren</a>
-															</li>
-															<li class="last">
-																<a title="Ein neues Passwort per E-Mail anfordern." href="/user/password">Neues Passwort anfordern</a>
-															</li>
-														</ul>
-													</div>
-												</div>
-											</form>
+										<div id="dw__login" class="content clearfix">
+											<?php _tpl_html_login(); ?>
 										</div>
 									</div><!-- /inner-inner -->
 								</div><!-- /inner-wrapper -->

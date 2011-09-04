@@ -137,3 +137,34 @@ function _tpl_include($fn) {
     else if (file_exists($tplFile))
         include($tplFile);
 }
+
+/**
+ * Display login form matching the style the drupal CSS expects but conforming to what the DokuWiki backend needs
+ *
+ * @author Clemens Lang <clemens@neverpanic.de>
+ */
+function _tpl_html_login() {
+	global $lang;
+	global $conf;
+	global $ID;
+
+	$html_form = file_get_contents(DOKU_TPL . '/login.html');
+	$html_form = str_replace(
+		array(
+			'@ACTION@',
+			'@SECTOK@',
+			'@ID@',
+			'@R@',
+			'@U@',
+		),
+		array(
+			'',
+			getSecurityToken(),
+			$ID,
+			0,
+			'',
+		),
+		$html_form;
+	);
+	print($html_form);
+}
