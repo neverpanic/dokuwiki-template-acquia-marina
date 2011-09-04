@@ -40,3 +40,8 @@ a.breadcrumbs {
 	font-size: 100%;
 }
 
+/* Make textarea full-width */
+#wiki__text {
+	width: 95%;
+}
+
