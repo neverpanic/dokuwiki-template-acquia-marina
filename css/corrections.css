@@ -51,3 +51,7 @@ a.breadcrumbs {
 	width: 95%;
 }
 
+/* Shrink URL field size so download button doesn't wrap */
+#plugin__manager .common input.edit {
+	width: 16em !important;
+}
