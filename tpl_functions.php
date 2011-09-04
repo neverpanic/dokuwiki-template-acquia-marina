@@ -164,7 +164,7 @@ function _tpl_html_login() {
 			0,
 			'',
 		),
-		$html_form;
+		$html_form
 	);
 	print($html_form);
 }
