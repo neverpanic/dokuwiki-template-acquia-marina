@@ -5,3 +5,20 @@
 form.button {
 	display: inline;
 }
+
+form.button input.button {
+	-moz-outline-radius: 4px 4px 4px 4px;
+	background: url("../images/blue-button.png") repeat-x scroll 0 0 transparent;
+	border: 1px solid #FFFFFF;
+	border-radius: 4px 4px 4px 4px;
+	color: #FFFFFF;
+	cursor: pointer;
+	font-family: Tahoma,Verdana,Arial,Helvetica,sans-serif;
+	font-size: 100%;
+	font-weight: bold;
+	margin: 0 4px;
+	outline: 1px solid #9BABB0;
+	padding: 2px 4px;
+	text-transform: uppercase;
+}
+
