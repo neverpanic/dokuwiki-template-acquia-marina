@@ -22,3 +22,8 @@ form.button input.button {
 	text-transform: uppercase;
 }
 
+form.button input.button:hover {
+	background-position: left bottom;
+	cursor: pointer;
+}
+
