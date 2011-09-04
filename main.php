@@ -132,6 +132,12 @@ $logged_in = $_SERVER['REMOTE_USER'];
 			<div class="preface-top-wrapper full-width" id="preface-top-wrapper">
 				<div class="preface-top row grid16-16" id="preface-top">
 					<div class="preface-top-inner inner clearfix" id="preface-top-inner">
+						<?php if ($showTools):
+							 tpl_button('edit');
+							_tpl_button('discussion');
+							 tpl_action('history');
+							 tpl_action('revert');
+						endif; ?>
 					</div><!-- /preface-top-inner -->
 				</div><!-- /preface-top -->
 			</div>
