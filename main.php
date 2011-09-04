@@ -301,38 +301,19 @@ $logged_in = $_SERVER['REMOTE_USER'];
 				</div><!-- /main -->
 			</div>
 
-<?php /*
-        <div class="wrapper">
-
-            <!-- PAGE ACTIONS -->
-            <?php if ($showTools): ?>
-                <div id="dokuwiki__pagetools">
-                    <h3 class="a11y"><?php echo tpl_getLang('page_tools') ?></h3>
-                    <ul>
-                        <?php
-                            tpl_action('edit', 1, 'li');
-                            _tpl_action('discussion', 1, 'li');
-                            tpl_action('history', 1, 'li');
-                            tpl_action('backlink', 1, 'li');
-                            tpl_action('subscribe', 1, 'li');
-                            tpl_action('revert', 1, 'li');
-                            tpl_action('top', 1, 'li');
-                        ?>
-                    </ul>
-                </div>
-            <?php endif; ?>
-        </div><!-- /wrapper -->
-
-        <!-- ********** FOOTER ********** -->
-        <div id="dokuwiki__footer"><div class="pad">
-            <div class="doc"><?php tpl_pageinfo() // 'Last modified' etc ?></div>
-            <?php tpl_license('button') // content license, parameters: img=*badge|button|0, imgonly=*0|1, return=*0|1 ?>
-        </div></div><!-- /footer -->
-
-        <?php _tpl_include('footer.html') ?>
-    </div></div><!-- /site -->
-
-    <div class="no"><?php tpl_indexerWebBug() // provide DokuWiki housekeeping, required in all templates ?></div>
-*/ ?>
+			<div class="footer-message-wrapper full-width" id="footer-message-wrapper">
+				<div class="footer-message row grid16-16" id="footer-message">
+					<div class="footer-message-inner inner clearfix" id="footer-message-inner">
+						<div id="dokuwiki__footer">
+							<div class="doc"><?php tpl_pageinfo() // 'Last modified' etc ?></div>
+							<?php tpl_license('button'); // content license, parameters: img=*badge|button|0, imgonly=*0|1, return=*0|1 ?>
+						</div>
+						<?php _tpl_include('footer.html'); ?>
+						<?php tpl_indexerWebBug(); // provide DokuWiki housekeeping, required in all templates ?>
+					</div><!-- /footer-message-inner -->
+				</div><!-- /footer-message -->
+			</div>
+		</div>
+	</div>
 </body>
 </html>
