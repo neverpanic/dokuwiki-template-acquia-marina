@@ -28,6 +28,8 @@ form.button input.button:hover {
 }
 
 form.btn_secedit {
+	display: block;
 	text-align: right;
+	margin-bottom: 20px;
 }
 
