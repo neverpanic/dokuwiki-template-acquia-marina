@@ -2,6 +2,7 @@
 	margin-bottom: 20px; /* center buttons vertically in ribbon */
 }
 
+/* style form buttons like the Acquia Marina buttons */
 form.button {
 	display: inline;
 }
@@ -27,9 +28,15 @@ form.button input.button:hover {
 	cursor: pointer;
 }
 
+/* Move section edit buttons to the right */
 form.btn_secedit {
 	display: block;
 	text-align: right;
 	margin-bottom: 20px;
+}
+
+/* Fix size for breadcrumbs; the problem is .breadcrumbs in drupal reduces size to 90%, but breadcrumbs is used twice in DokuWiki */
+a.breadcrumbs {
+	font-size: 100%;
 }
 
