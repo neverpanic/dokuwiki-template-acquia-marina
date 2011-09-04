@@ -7,7 +7,12 @@ form.button {
 	display: inline;
 }
 
-form.button input.button {
+div.editButtons {
+	margin-bottom: 10px;
+}
+
+form.button input.button,
+div.editButtons input.button {
 	-moz-outline-radius: 4px 4px 4px 4px;
 	background: url("/sites/all/themes/acquia_marina/images/blue-button.png") repeat-x scroll 0 0 transparent;
 	border: 1px solid #FFFFFF;
